@@ -27,8 +27,9 @@ class TimerInsertController extends Controller
     public function create(Request $request){
         //validation
         //return "validation";
+        $count = $request->input('row');
         $data =[];
-        for($i=0; $i < 50000; $i++) {
+        for($i=0; $i < $count; $i++) {
             $data[] = [
                 "gerenter_key" => $this->randomId($i)
             ];
